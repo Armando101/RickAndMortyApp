@@ -11,6 +11,6 @@
         text-align: center;
     }
     button {
-        @include myButton(50%, --active-primary)
+        @include myButton(50%)
     }
 }

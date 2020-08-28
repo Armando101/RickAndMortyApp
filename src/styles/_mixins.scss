@@ -1,4 +1,4 @@
-@mixin myButton($width, $bgColor, $bgColorHover: --brand-primary) {
+@mixin myButton($width, $bgColor: --active-primary, $bgColorHover: --brand-primary) {
     border: none;
     padding: 20px;
     border-radius: 300px;

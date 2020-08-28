@@ -1,3 +1,17 @@
 <section class="content">
-    <p>login-form works!</p>
+    <section class="login">
+        <div class="login__image">
+            <img src="https://rtvc-assets-radionica3.s3.amazonaws.com/s3fs-public/styles/image_750x424/public/field/image/article/rick-morty-pelicula.jpg?itok=thJFYqHN" alt="imagen Login">
+        </div>
+        <div class="content__form">
+            <form [formGroup]="loginForm" class="login__form" (ngSubmit)='send()'>
+                <h2>Login</h2>
+                <input class="space_bottom_mg" type="email" placeholder="example@domain.com" formControlName="email" [class.is-invalid]="invalidForm(loginForm, 'email')">
+                <p *ngIf="invalidForm(loginForm, 'email')" class="invalid">Invalid email</p>
+                <input class="space_bottom_mg" type="password" placeholder="Password" formControlName="password" [class.is-invalid]="invalidForm(loginForm, 'password')">
+                <p *ngIf="invalidForm(loginForm, 'password')" class="invalid">Invalid password</p>
+                <button class="login__form-btn" name="login" type='submit'>Send</button>
+            </form>
+        </div>
+    </section>
 </section>

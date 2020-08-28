@@ -1,0 +1,83 @@
+@import 'src/styles/mixins';
+.content__form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.login {
+    display: flex;
+    height: 74vh;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    margin-left: 30px;
+    &__image {
+        width: 50%;
+        margin-right: 5%;
+        & img {
+            width: 100%;
+            border-radius: 50px;
+        }
+    }
+    &__form {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & h2 {
+            margin-bottom: 20px;
+        }
+        &-btn {
+            @include myButton(100%);
+        }
+    }
+}
+
+input {
+    width: 100%;
+    height: 2rem;
+    border-radius: 50px;
+    border: 0px;
+    box-shadow: 0px 0 5px;
+    text-align: center;
+    text-align-last: center;
+    margin-bottom: 10px;
+}
+
+.invalid {
+    margin-top: 0px;
+    color: var(----boolean-faild);
+    margin-bottom: 10px;
+}
+
+.is-invalid {
+    border: 5px solid var(--boolean-faild);
+}
+
+@media screen and (max-width:760px) {
+    .content__form {
+        width: 100%;
+    }
+    .login {
+        flex-direction: column;
+        &__image {
+            width: 50%;
+        }
+        &__form {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width:490px) {
+    .login {
+        &__image {
+            width: 100%;
+        }
+        &__form {
+            width: 100%;
+        }
+    }
+}
