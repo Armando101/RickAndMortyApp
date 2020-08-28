@@ -1,0 +1,44 @@
+.header {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: var(--brand-primary);
+    line-height: 80px;
+    box-shadow: 1px 1px 10px black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    & h2 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.9);
+        &:hover {
+            color: white;
+            text-decoration: underline;
+        }
+    }
+    &__nav {
+        &:hover>ul li a {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        & ul {
+            display: flex;
+            justify-content: space-around;
+            & li a {
+                display: flex;
+                color: white;
+                font-weight: bold;
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                align-items: center;
+                cursor: pointer;
+                & span:hover {
+                    color: rgb(255, 255, 255);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
