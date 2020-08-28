@@ -16,8 +16,8 @@ export class EpisodesService {
     private http: HttpClient
   ) { }
 
-  getEpisodes(): Observable<object> {
-    return this.http.get(this.url)
+  getEpisodes(page = ''): Observable<object> {
+    return this.http.get(`${this.url}${page}`)
       .pipe(
         map( ({results}: any) => {
           return results;

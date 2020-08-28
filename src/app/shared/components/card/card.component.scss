@@ -14,7 +14,7 @@
     &__title {
         display: flex;
         justify-content: center;
-        font-size: 180%;
+        font-size: 130%;
     }
     &__subtitle,
     &__description {
@@ -52,6 +52,12 @@
             background-color: rgba(97, 9, 255, 0.5);
             background-size: 100%;
         }
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .card__title {
+        font-size: 110%;
     }
 }
 
