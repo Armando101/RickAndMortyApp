@@ -36,6 +36,7 @@ export class LoginFormComponent implements OnInit {
 
     if (this.loginForm.invalid) {
       Object.values(this.loginForm.controls).map(control => {
+        // tslint:disable-next-line: no-unused-expression
         control.status === 'INVALID' && control.markAsTouched();
       });
       return;
