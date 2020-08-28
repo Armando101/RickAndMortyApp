@@ -20,6 +20,10 @@ const routes: Routes = [
       {
         path: 'episodes',
         loadChildren: () => import('./episodes/episodes.module').then(m => m.EpisodesModule)
+      },
+      {
+        path: 'login',
+        loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
       }
     ]
   }
