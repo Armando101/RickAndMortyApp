@@ -11,6 +11,7 @@
                 <input class="space_bottom_mg" type="password" placeholder="Password" formControlName="password" [class.is-invalid]="invalidForm(loginForm, 'password')">
                 <p *ngIf="invalidForm(loginForm, 'password')" class="invalid">Invalid password</p>
                 <button class="login__form-btn" name="login" type='submit'>Send</button>
+                <p *ngIf="invalid" class="invalid">Invalid User or Password</p>
             </form>
         </div>
     </section>
