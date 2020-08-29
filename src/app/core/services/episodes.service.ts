@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { Character } from 'src/app/core/models/character.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,29 @@ export class EpisodesService {
     private http: HttpClient
   ) { }
 
-  getEpisodes(page = ''): Observable<object> {
-    return this.http.get(`${this.url}${page}`)
+  public getEpisodes(): Observable<object> {
+    return this.http.get(`${this.url}`)
       .pipe(
         map( ({results}: any) => {
           return results;
         })
       );
+  }
+
+  public getEpisode(id: number): Observable<Character[]> {
+    return this.http.get(`${this.url}/${id}`)
+      .pipe(map(({characters}: any) => this.getCharacter(characters)));
+  }
+
+  private getCharacter(characters: string[]): Character[] {
+    const characterArray: Character[] = [];
+
+    characters.map((characterUrl: string) => {
+      this.http.get(characterUrl).subscribe((response: Character) => {
+        characterArray.push(response);
+      });
+    });
+
+    return characterArray;
   }
 }

@@ -7,6 +7,10 @@ const routes: Routes = [
     {
         path: '', canActivate: [ EpisodeGuard ],
         component: EpisodesComponent
+    },
+    {
+        path: ':id', canActivate: [ EpisodeGuard ],
+        component: EpisodesComponent
     }
 ];
 

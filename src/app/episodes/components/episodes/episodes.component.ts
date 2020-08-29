@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { EpisodesService } from 'src/app/core/services/episodes.service';
 import { Episode } from 'src/app/core/models/episode.model';
+import { Character } from 'src/app/core/models/character.model';
 
 @Component({
   selector: 'app-episodes',
@@ -11,15 +13,25 @@ import { Episode } from 'src/app/core/models/episode.model';
 export class EpisodesComponent implements OnInit {
 
   public titleHeader = 'Rick and Morty Episodes';
-  public episodes: Episode[];
+  public data: Episode[] | Character[];
 
   constructor(
-    private episodesService: EpisodesService
+    private episodesService: EpisodesService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.episodesService.getEpisodes().subscribe((response: Episode[]) => this.episodes = response);
-    console.log(this.episodes);
+    this.activatedRoute.params.subscribe(({id}) => {
+      console.log(id);
+      if ( id ) {
+        this.episodesService.getEpisode(id).subscribe((response: Character[]) => {
+          console.log(response);
+          // this.data = response;
+        });
+      }
+    });
+
+    this.episodesService.getEpisodes().subscribe((response: Episode[]) => this.data = response);
   }
 
 }
