@@ -14,6 +14,7 @@ export class EpisodesComponent implements OnInit {
 
   public titleHeader = 'Rick and Morty Episodes';
   public data: Episode[] | Character[];
+  public isEpisode: boolean;
 
   constructor(
     private episodesService: EpisodesService,
@@ -26,12 +27,14 @@ export class EpisodesComponent implements OnInit {
       if ( id ) {
         this.episodesService.getEpisode(id).subscribe((response: Character[]) => {
           console.log(response);
-          // this.data = response;
+          this.titleHeader = `Characters in episode number: ${id}`;
+          this.isEpisode = false;
+          this.data = response;
         });
+      } else {
+        this.episodesService.getEpisodes().subscribe((response: Episode[]) => this.data = response);
+        this.isEpisode = true;
       }
     });
-
-    this.episodesService.getEpisodes().subscribe((response: Episode[]) => this.data = response);
   }
-
 }

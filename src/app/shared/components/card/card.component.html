@@ -1,10 +1,18 @@
 <div class="content__data--card">
-    <img [src]="data.img" alt="data">
+    <img [src]="data.image" [alt]="data.name">
     <div class="card__container">
         <h3 class="card__title">{{ data.name | uppercase}}</h3>
-        <p class="card__subtitle"><strong>Air date</strong>: {{ data.air_date }}</p>
-        <p class="card__description"><strong>Episode</strong>: {{ data.episode }}</p>
-        <div class="panelButtons">
+        <p *ngIf="isEpisode" class="card__subtitle"><strong>Air date</strong>: {{ data.air_date }}</p>
+        <p *ngIf="isEpisode" class="card__description"><strong>Episode</strong>: {{ data.episode }}</p>
+
+        <p *ngIf="!isEpisode" class="card__subtitle"><strong>{{ data.species }}</strong></p>
+        <p *ngIf="!isEpisode" class="card__description">
+            <strong>Status</strong>: {{ data.status }} <br>
+            <strong>Gender</strong>: {{ data.gender }}
+        </p>
+
+
+        <div *ngIf="isEpisode" class="panelButtons">
             <a routerLink="/episodes/{{ data.id }}">Detail</a>
         </div>
     </div>

@@ -1,6 +1,6 @@
 <section class="content">
     <h2 class="card__header">{{ titleHeader }}</h2>
     <div class="card__content">
-        <app-card *ngFor="let cardData of data" [data]="cardData"></app-card>
+        <app-card *ngFor="let cardData of data" [data]="cardData" [isEpisode]="isEpisode"></app-card>
     </div>
 </section>
