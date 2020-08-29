@@ -44,19 +44,19 @@ https://armando101.github.io/RickAndMortyApp/home
 ## Features
 - Home
 Home page show a message and button to login
-![Login]()
+![Home](https://raw.githubusercontent.com/Armando101/RickAndMortyApp/master/src/assets/ss/home.png)
 
 - Login
 If you aren't logged you can use this app
-![Login]()
+![Login](https://raw.githubusercontent.com/Armando101/RickAndMortyApp/master/src/assets/ss/login.png)
 
 - Episodes
 You can watch information about episodes availvable
-![episodes]()
+![Episodes](https://raw.githubusercontent.com/Armando101/RickAndMortyApp/master/src/assets/ss/episodes.png)
 
 At the End of the page you can find arrows to see more episodes
-![EpisodesNav]()
+![EpisodesNav](https://raw.githubusercontent.com/Armando101/RickAndMortyApp/master/src/assets/ss/BottomNav.png)
 
 - Characters
 If you click episode detail you can watch all characters that appers in that episode
-![Characters]()
+![Characters](https://raw.githubusercontent.com/Armando101/RickAndMortyApp/master/src/assets/ss/characters.png)
