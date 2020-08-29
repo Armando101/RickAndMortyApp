@@ -10,6 +10,21 @@
     }
 }
 
+.panel_arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & a i {
+        color: var(--brand-secondary);
+        font-size: 50px;
+    }
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
 @media screen and (max-width: 880px) {
     .card__header {
         margin-top: 7%;

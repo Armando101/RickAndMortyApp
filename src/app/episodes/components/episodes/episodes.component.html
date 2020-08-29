@@ -3,8 +3,8 @@
     <div class="card__content">
         <app-card *ngFor="let cardData of data" [data]="cardData" [isEpisode]="isEpisode"></app-card>
     </div>
-    <div *ngIf="isEpisode" class="panel arrows">
-        <a routerLink="/episodes/page/{{ numberPage - 1 }}"><i class="material-icons" >navigate_before</i></a>
-        <a routerLink="/episodes/page/{{ numberPage + 1 }}"><i class="material-icons">navigate_next</i></a>
+    <div *ngIf="isEpisode" class="panel_arrows">
+        <a [ngClass]="{ 'disabled': numberPage <= 1 }" routerLink="/episodes/page/{{ numberPage - 1 }}"><i class="material-icons" >navigate_before</i></a>
+        <a [ngClass]="{ 'disabled': numberPage >= 3 }" routerLink="/episodes/page/{{ numberPage + 1 }}"><i class="material-icons">navigate_next</i></a>
     </div>
 </section>
