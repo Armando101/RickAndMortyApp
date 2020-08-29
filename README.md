@@ -54,7 +54,7 @@ If you aren't logged you can use this app
 You can watch information about episodes availvable
 ![Episodes](https://raw.githubusercontent.com/Armando101/RickAndMortyApp/master/src/assets/ss/episodes.png)
 
-At the End of the page you can find arrows to see more episodes
+- At the End of the page you can find arrows to see more episodes
 ![EpisodesNav](https://raw.githubusercontent.com/Armando101/RickAndMortyApp/master/src/assets/ss/BottomNav.png)
 
 - Characters
