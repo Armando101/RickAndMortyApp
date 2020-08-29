@@ -36,3 +36,7 @@ ng add angular-cli-ghpages
 ```
 ng deploy --repo=https://github.com/Armando101/RickAndMortyApp.git --base-href=https://armando101.github.io/RickAndMortyApp/home
 ```
+
+4. __Enjoy RickAndMortyApp__
+Click the next link to use
+https://armando101.github.io/RickAndMortyApp/home
