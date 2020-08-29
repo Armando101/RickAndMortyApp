@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EpisodesComponent } from './components/episodes/episodes.component';
-import { EpisodeGuard } from 'src/app/core/guards/episode-guard.guard';
 
 const routes: Routes = [
     {
-        path: '', canActivate: [ EpisodeGuard ],
+        path: '',
         component: EpisodesComponent,
         redirectTo: 'page/1',
         pathMatch: 'full'
     },
     {
-        path: 'page/:number', canActivate: [ EpisodeGuard ],
+        path: 'page/:number',
         component: EpisodesComponent
     },
     {
-        path: ':id', canActivate: [ EpisodeGuard ],
+        path: ':id',
         component: EpisodesComponent
     }
 ];

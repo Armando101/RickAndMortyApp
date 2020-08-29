@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
+import { EpisodeGuard } from 'src/app/core/guards/episode-guard.guard';
 import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {
-        path: 'episodes',
+        path: 'episodes', canActivate: [ EpisodeGuard ],
         loadChildren: () => import('./episodes/episodes.module').then(m => m.EpisodesModule)
       },
       {
