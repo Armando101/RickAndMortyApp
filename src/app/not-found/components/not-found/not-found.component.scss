@@ -1,0 +1,19 @@
+@import 'src/styles/mixins';
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & h3 {
+        text-align: center;
+    }
+    & a {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        text-align: center;
+        @include myButton(50%);
+    }
+    & h4 {
+        font-size: 200%;
+    }
+}
