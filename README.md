@@ -34,9 +34,29 @@ ng add angular-cli-ghpages
 ```
 3. __Deploy your App__
 ```
-ng deploy --repo=https://github.com/Armando101/RickAndMortyApp.git --base-href=https://armando101.github.io/RickAndMortyApp/home
+ng deploy --repo=https://github.com/Armando101/RickAndMortyApp.git --base-href=https://armando101.github.io/RickAndMortyApp/
 ```
 
-4. __Enjoy RickAndMortyApp__
-Click the next link to use
+4. __Enjoy RickAndMortyApp__  
+Click the next link to use  
 https://armando101.github.io/RickAndMortyApp/home
+
+## Features
+- Home
+Home page show a message and button to login
+![Login]()
+
+- Login
+If you aren't logged you can use this app
+![Login]()
+
+- Episodes
+You can watch information about episodes availvable
+![episodes]()
+
+At the End of the page you can find arrows to see more episodes
+![EpisodesNav]()
+
+- Characters
+If you click episode detail you can watch all characters that appers in that episode
+![Characters]()
