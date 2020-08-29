@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EpisodeGuardGuard implements CanActivate {
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+export class EpisodeGuard implements CanActivate {
+
+  constructor(
+    private router: Router
+  ) {}
+
+  canActivate(): boolean {
+    if ( localStorage.getItem('rickAndMortyToken' )) {
+      return true;
+    } else {
+      this.router.navigateByUrl('login');
+      return false;
+    }
   }
-  
 }

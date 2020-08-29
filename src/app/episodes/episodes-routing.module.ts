@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EpisodesComponent } from './components/episodes/episodes.component';
+import { EpisodeGuard } from 'src/app/core/guards/episode-guard.guard';
 
 const routes: Routes = [
     {
-        path: '',
+        path: '', canActivate: [ EpisodeGuard ],
         component: EpisodesComponent
     }
 ];
