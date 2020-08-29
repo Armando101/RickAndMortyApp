@@ -6,6 +6,12 @@ import { EpisodeGuard } from 'src/app/core/guards/episode-guard.guard';
 const routes: Routes = [
     {
         path: '', canActivate: [ EpisodeGuard ],
+        component: EpisodesComponent,
+        redirectTo: 'page/1',
+        pathMatch: 'full'
+    },
+    {
+        path: 'page/:number', canActivate: [ EpisodeGuard ],
         component: EpisodesComponent
     },
     {

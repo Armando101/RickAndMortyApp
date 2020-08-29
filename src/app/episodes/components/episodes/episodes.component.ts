@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { EpisodesService } from 'src/app/core/services/episodes.service';
 import { Episode } from 'src/app/core/models/episode.model';
@@ -18,12 +18,13 @@ export class EpisodesComponent implements OnInit {
 
   constructor(
     private episodesService: EpisodesService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({id}) => {
-      console.log(id);
+    this.activatedRoute.params.subscribe((params) => {
+      const id: number = params.id;
       if ( id ) {
         this.episodesService.getEpisode(id).subscribe((response: Character[]) => {
           console.log(response);
@@ -32,7 +33,11 @@ export class EpisodesComponent implements OnInit {
           this.data = response;
         });
       } else {
-        this.episodesService.getEpisodes().subscribe((response: Episode[]) => this.data = response);
+        this.episodesService.getEpisodes(params.number)
+          .subscribe(
+            (response: Episode[]) => this.data = response,
+            error => this.router.navigateByUrl('/episodes/page/1')
+          );
         this.isEpisode = true;
       }
     });
