@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
     this.loginService.getObservable().subscribe((response: boolean) => {
       this.isLogin = response;
     });
+    this.isLogin = this.loginService.isLoginFunction();
   }
 
   logout(): void {

@@ -47,4 +47,8 @@ export class LoginService {
     localStorage.removeItem('rickAndMortyToken');
     this.isLogin.next(false);
   }
+
+  public isLoginFunction(): boolean {
+    return !!localStorage.getItem('rickAndMortyToken');
+  }
 }
