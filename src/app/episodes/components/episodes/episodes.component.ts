@@ -27,7 +27,7 @@ export class EpisodesComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id: number = params.id;
-      id ? this.getCharacter(id) : this.getEpisodes(Number(params.number));
+      id ? this.getCharacter(id) : this.getEpisodes(params.number);
     });
   }
 
@@ -36,12 +36,12 @@ export class EpisodesComponent implements OnInit {
       this.titleHeader = `Characters in episode number: ${id}`;
       this.isEpisode = false;
       this.data = response;
-    });
+    }, error => this.router.navigateByUrl('/episodes/1'));
   }
 
-  getEpisodes(numberPage: number): void {
+  getEpisodes(numberPage): void {
     // tslint:disable-next-line: no-unused-expression
-    numberPage < 1 && (this.router.navigateByUrl('/episodes/page/1'));
+    (numberPage < 1 || !parseFloat(numberPage)) && (this.router.navigateByUrl('/episodes/page/1'));
     this.episodesService.getEpisodes(numberPage)
           .subscribe(
             (response: Episode[]) => this.data = response,
