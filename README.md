@@ -6,22 +6,33 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Credentials
+This App contains fake credentials that generates a fictitial token.
+You have to login with:
+```
+email: rick@morty.com
+password: ImRickAndYouAreMorty
+```
+If you aren't register you wont be able to use this app.
+Episodes page contains a guard that deny access if you aren't logged
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Producction
+To execute this project in GitHub pages follow the next steps
 
-## Running end-to-end tests
+1. __Install angular-cli-ghpages__
+```
+npm i angular-cli-ghpages
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+2. __Add angular-cli-ghpages to your project__
+```
+ng add angular-cli-ghpages
+```
+3. __Deploy your App__
+```
+ng deploy --repo=https://github.com/Armando101/RickAndMortyApp.git --base-href=https://armando101.github.io/RickAndMortyApp/home
+```
